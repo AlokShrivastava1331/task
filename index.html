@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <form id="sampleForm">
+    <!-- Text Input -->
+    <label for="textInput">Text Input:</label>
+    <input type="text" id="textInput" name="textInput" required>
+    <br>
+
+    <!-- Checkbox -->
+    <label>Checkbox:</label>
+    <input type="checkbox" id="checkboxInput" name="checkboxInput">
+    <br>
+
+    <!-- Dropdown -->
+    <label for="dropdown">Dropdown:</label>
+    <select id="dropdown" name="dropdown">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+    <br>
+
+    <!-- Radio Buttons -->
+    <label>Radio Buttons:</label>
+    <input type="radio" id="radio1" name="radioGroup" value="radio1">
+    <label for="radio1">Radio 1</label>
+    <input type="radio" id="radio2" name="radioGroup" value="radio2">
+    <label for="radio2">Radio 2</label>
+    <input type="radio" id="radio3" name="radioGroup" value="radio3">
+    <label for="radio3">Radio 3</label>
+    <br>
+
+    <!-- Submit Button -->
+    <button type="button" onclick="collectFormData()">Submit</button>
+  </form>
+
+  <script>
+    function collectFormData() {
+      // Get form elements
+      const textInputValue = document.getElementById('textInput').value;
+      const checkboxInputValue = document.getElementById('checkboxInput').checked;
+      const dropdownValue = document.getElementById('dropdown').value;
+      const radioValue = document.querySelector('input[name="radioGroup"]:checked') ? document.querySelector('input[name="radioGroup"]:checked').value : null;
+
+      // Log collected data to console
+      console.log('Text Input:', textInputValue);
+      console.log('Checkbox:', checkboxInputValue);
+      console.log('Dropdown:', dropdownValue);
+      console.log('Radio:', radioValue);
+    }
+  </script>
+
+</body>
+</html>
